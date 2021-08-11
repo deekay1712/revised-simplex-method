@@ -1,0 +1,92 @@
+body{
+    margin : 0px;
+    padding : 0px;
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Helvetica";
+}
+input{
+    outline: none;
+    text-align: center;
+}
+#main{
+    /* background-color: red; */
+    margin-top : 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+#info input{
+    padding: 6px 10px;
+    width: 60px;
+    margin: 0px 15px 0px 5px;
+}
+
+#makematrix{
+    font-size: 16px;
+    padding: 4px 6px;
+}
+
+#objinp{
+    padding: 20px 0px 10px 0px;
+}
+#objinp input{
+    padding: 6px 10px;
+    width: 60px;
+    margin: 5px 7px 5px 20px;
+}
+
+#objinp select{
+    padding: 6px 10px;
+    width: 70px;
+    margin: 0px 5px;
+}
+
+#matrix{
+
+}
+
+#matrix input{
+    font-size: 18px;
+    padding: 6px 10px;
+    width: 75px;
+    margin: 10px 7px 5px 20px;
+}
+
+#matrix select{
+    font-size: 17px;
+    padding: 6px 7px;
+    width: 60px;    
+    margin: 10px 7px 5px 20px;
+}
+
+#submit{
+    font-size: 16px;
+    padding: 7px 10px;
+    /* border-radius: 5px; */
+    outline: none;
+    /* border: 1px solid black; */
+}
+
+#ans{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+#foot{
+    margin-top: 50px;
+    text-align: center;
+}
+
+a{
+    margin:0px 10px;
+}
