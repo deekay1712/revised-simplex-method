@@ -170,7 +170,7 @@ try:
         minimum = 9999
         # minimum ratio test
         while i < len(Binv):
-            if(xb[i] > 0 and X[i] > 0):
+            if(xb[i] >= 0 and X[i] > 0):
                 val = xb[i]/X[i]
                 if val < minimum:
                     minimum = val
@@ -193,6 +193,13 @@ try:
                 for j in range(0, len(Binv)):
                     Binv[i][j] = Binv[i][j] - (div_factor*Binv[r][j])
 
+        #if leaving vector is artificial varibale, then kicking that coloumn form A and c
+        tflag = ntemp + constNum - eqlCount
+        for i in (tflag, len(A)):
+            if(i==B[r][0]):
+                c = np.delete(c, B[r][0])
+                A = np.delete(A, B[r][0], 1)
+                
         # updating basic variables
         for i in range(0, len(A[0])):
             chk1 = np.array([row[i] for row in A])
