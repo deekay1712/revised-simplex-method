@@ -211,24 +211,28 @@ try:
     if(unbounded == 1):
         print("The given LPP is unbounded")
     else:
-        alreadyPrinted = []
+        finalAns = {}
+        infeasible = False
+        counterXb = 0
 
-        templimit = min(len(xb), ntemp)
+        for i in B:
+            finalAns[f"x{i[0]+1}"] = xb[counterXb]
+            counterXb += 1
 
-        # for i in range(0, templimit):
-        #     alreadyPrinted.append(f"x{B[i][0]+1}")
-        #     print(f"x{B[i][0]+1}", "=", xb[i])
-
-        for i in range(ntemp):
-            if i < len(xb) and i in B:
-                # print(i, xb[i])
-                alreadyPrinted.append(f"x{B[i][0]+1}")
-                print(f"x{B[i][0]+1}", "=", xb[i])
-
+        # print(finalAns)
 
         for i in range(1, ntemp+1):
-            if f"x{i}" not in alreadyPrinted:
+            if f"x{i}" in finalAns:
+                print( f"x{i}","=",finalAns[f"x{i}"])
+            else:
                 print(f"x{i} = 0")
+
+        for i in finalAns:
+            if int(i[1]) in range(ntemp+constNum-eqlCount, len(A[0])):
+                infeasible = True
+
+        if infeasible:
+            print("The given LPP is infeasible")
 
         if alternate == 1:
             print("Alternate solution also exists for the given LPP")
