@@ -228,7 +228,7 @@ try:
                 print(f"x{i} = 0")
 
         for i in finalAns:
-            if int(i[1]) in range(ntemp+constNum-eqlCount, len(A[0])):
+            if (int(i[1])-1) in range(ntemp+constNum-eqlCount, len(A[0])):
                 infeasible = True
 
         if infeasible:
