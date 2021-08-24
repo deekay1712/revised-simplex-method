@@ -54,6 +54,9 @@ try:
     # cinp = list(
     #     map(int, input("Enter coefficients of objective functions : ").split()))
     cinp = objZ
+    
+    #storing coeff of objective function for later calculation
+    objectiveCoeff = cinp
 
     # constNum = int(input("Enter the number of constraints : "))
     constNum = totalcons
@@ -220,12 +223,16 @@ try:
             counterXb += 1
 
         # print(finalAns)
-
+        Zvalue = 0
+        
         for i in range(1, ntemp+1):
             if f"x{i}" in finalAns:
                 print( f"x{i}","=",finalAns[f"x{i}"])
+                Zvalue += objectiveCoeff[i-1]*finalAns[f"x{i}"] #calculating Z value
             else:
                 print(f"x{i} = 0")
+                
+        print("Z =", Zvalue)
 
         for i in finalAns:
             if (int(i[1])-1) in range(ntemp+constNum-eqlCount, len(A[0])):
